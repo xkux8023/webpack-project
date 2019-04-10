@@ -1,4 +1,7 @@
-const path = require('path');
+const webpack = require('webpack')
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
   entry: path.join(__dirname, "/src/index.js"), // 入口文件
@@ -32,5 +35,14 @@ module.exports = {
         exclude: /node_modules/
       }
     ]
-  }
+  },
+  plugins: [
+    new webpack.BannerPlugin('已经学不动了'),
+    new HtmlWebpackPlugin({
+      // new一个这个插件的实例，并传入相关的参数
+      template: path.join(__dirname, "/src/index.template.html")
+    }),
+    new CleanWebpackPlugin(),  // 清理dist文件夹
+    new webpack.HotModuleReplacementPlugin() // 热更新插件
+  ]
 }

@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "build": "webpack --config webpack.prod.js",
-    "dev": "webpack-dev-server --open --config webpack.dev.js"
+    "build": "webpack --config webpack.prod.js --mode production",
+    "dev": "webpack-dev-server --open --config webpack.dev.js --mode development"
   },
   "devDependencies": {
     "autoprefixer": "^9.5.1",

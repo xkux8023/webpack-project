@@ -12,5 +12,18 @@ module.exports = {
     inline: true, // 文件修改后实时刷新
     historyApiFallback: true //不跳转
   },
-   devtool: 'source-map'  // 会生成对于调试的完整的.map文件，但同时也会减慢打包速度
+  devtool: 'source-map',  // 会生成对于调试的完整的.map文件，但同时也会减慢打包速度
+  module: {
+    rules: [
+      {
+        test: /\.css$/, // 正则匹配以.css结尾的文件
+        // 需要用的loader，一定是这个顺序，因为调用loader是从右往左编译的
+        use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.(scss|sass)$/, // 正则匹配以.scss和.sass结尾的文件
+        use: ['style-loader', 'css-loader', 'sass-loader']
+      }
+    ]
+  }
 }

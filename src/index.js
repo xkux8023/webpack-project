@@ -1,5 +1,8 @@
 import './css/style.css';
 import './css/blue.scss';
 
-const hello = require('./hello.js')
-document.querySelector("#root").appendChild(hello())
+import React from 'react';
+import {render} from 'react-dom';
+import Hello from './hello';
+
+render(<Hello />, document.getElementById('root'))

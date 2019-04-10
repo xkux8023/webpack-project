@@ -23,6 +23,13 @@ module.exports = {
       {
         test: /\.(scss|sass)$/, // 正则匹配以.scss和.sass结尾的文件
         use: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /(\.jsx|\.js)$/,
+        use: {
+          loader: "babel-loader"
+        },
+        exclude: /node_modules/
       }
     ]
   }

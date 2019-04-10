@@ -11,5 +11,6 @@ module.exports = {
     port: "8888",
     inline: true, // 文件修改后实时刷新
     historyApiFallback: true //不跳转
-  }
+  },
+   devtool: 'source-map'  // 会生成对于调试的完整的.map文件，但同时也会减慢打包速度
 }

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-let name = 'Alan'
+let name = 'Alanm'
 
 export default class Hello extends Component {
   render() {
